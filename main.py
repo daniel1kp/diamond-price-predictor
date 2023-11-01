@@ -10,10 +10,10 @@ st.set_page_config(page_title="Diamond Price Predictor", page_icon="💎")
 
 # App title and description
 st.title("Diamond Price Prediction!")
-st.write("Upload a file in either CSV or JSON format to analyze the data and predict diamond prices!")
+st.write("Upload a file in CSV format to analyze the data and predict diamond prices!")
 
 # File upload widget
-uploaded_file = st.file_uploader("Upload a file", type=["csv", "json"])
+uploaded_file = st.file_uploader("Upload a file", type=["csv"])
 
 selected_case = None  # Initialize selected_case
 num_rows = 1000  # Default value for num_rows
@@ -27,10 +27,6 @@ if uploaded_file is not None:
         df = pd.read_csv(uploaded_file,header=0)
         # Allow the user to select a case
         selected_case = st.selectbox("Case Study Options!", ["Select the case!", "Case 1 - 100 Rows", "Case 2 - 1000 Rows", "Case 3 - 2500 Rows"])
-    elif file_extension == "json":
-        df = pd.read_json(uploaded_file)
-        st.error("JSON format is not supported currently, please upload a CSV file!")
-        st.stop()
 
     # Data Preprocessing
     # One-hot encode categorical columns
