@@ -49,3 +49,7 @@ The Diamond Price Predictor is a simple web application that allows users to upl
 ## Data Sources
 
 The dataset used in this project can be found on Kaggle. You can access the dataset [here](https://www.kaggle.com/datasets/shivam2503/diamonds). 
+
+## Deployment
+
+The web application can be accessed [here](https://diamond-price-prediction-application.streamlit.app/).
